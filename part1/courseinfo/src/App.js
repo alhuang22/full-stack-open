@@ -1,5 +1,31 @@
 import React from "react";
 
+const Header = (props) => {
+  return <h1>{props.course}</h1>;
+};
+
+const Part = (props) => {
+  return (
+    <p>
+      {props.part} {props.exercises}
+    </p>
+  );
+};
+
+const Content = (props) => {
+  return (
+    <>
+      <Part part={props.p1} exercises={props.e1} />
+      <Part part={props.p2} exercises={props.e2} />
+      <Part part={props.p3} exercises={props.e3} />
+    </>
+  );
+};
+
+const Total = (props) => {
+  return <p>{props.e1 + props.e2 + props.e3}</p>;
+};
+
 const App = () => {
   const course = "Half Stack application development";
   const part1 = "Fundamentals of React";
@@ -11,17 +37,16 @@ const App = () => {
 
   return (
     <div>
-      <h1>{course}</h1>
-      <p>
-        {part1} {exercises1}
-      </p>
-      <p>
-        {part2} {exercises2}
-      </p>
-      <p>
-        {part3} {exercises3}
-      </p>
-      <p>Number of exercises {exercises1 + exercises2 + exercises3}</p>
+      <Header course={course} />
+      <Content
+        p1={part1}
+        p2={part2}
+        p3={part3}
+        e1={exercises1}
+        e2={exercises2}
+        e3={exercises3}
+      />
+      <Total e1={exercises1} e2={exercises2} e3={exercises3} />
     </div>
   );
 };
