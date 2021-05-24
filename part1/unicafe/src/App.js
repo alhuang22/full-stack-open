@@ -31,6 +31,11 @@ const App = () => {
         <br />
         bad {bad}
         <br />
+        all {total}
+        <br />
+        average {average}
+        <br />
+        positive {positive}
       </p>
     </div>
   );
