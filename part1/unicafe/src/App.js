@@ -15,8 +15,8 @@ const App = () => {
   const handleBad = () => setBad(bad + 1);
 
   const total = good + neutral + bad;
-  const average = total != 0 ? (good + bad * -1) / total : 0;
-  const positive = total != 0 ? good / total : 0;
+  const average = total !== 0 ? (good + bad * -1) / total : 0;
+  const positive = total !== 0 ? good / total : 0;
   return (
     <div>
       <h1>give feedback</h1>
