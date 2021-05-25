@@ -5,9 +5,7 @@ const Course = ({ course }) => {
   return (
     <div>
       <Header course={course} />
-      {course.parts.map((part) => (
-        <Part key={part.id} part={part} />
-      ))}
+      <Content course={course} />
     </div>
   );
 };
@@ -35,9 +33,9 @@ const Part = (props) => {
 const Content = ({ course }) => {
   return (
     <div>
-      <Part part={course.parts[0]} />
-      <Part part={course.parts[1]} />
-      <Part part={course.parts[2]} />
+      {course.parts.map((part) => (
+        <Part key={part.id} part={part} />
+      ))}
     </div>
   );
 };
