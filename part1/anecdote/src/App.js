@@ -12,7 +12,17 @@ const App = () => {
 
   const [selected, setSelected] = useState(0);
 
-  return <div>{anecdotes[selected]}</div>;
+  const generateRandom = () => {
+    let index = Math.floor(Math.random() * anecdotes.length);
+    setSelected(index);
+  };
+
+  return (
+    <div>
+      <p>{anecdotes[selected]}</p>
+      <button onClick={generateRandom}>next anecdote</button>
+    </div>
+  );
 };
 
 export default App;
